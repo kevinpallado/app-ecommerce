@@ -32,7 +32,7 @@
     </div>
 
     <ProductsDetails
-      v-else-if="productDetails"
+      v-else-if="productDetails && !pending"
       :productDetails="productDetails"
     />
   </div>

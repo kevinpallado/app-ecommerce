@@ -125,16 +125,13 @@ const handleSubmit = async () => {
     const config = useRuntimeConfig();
 
     // Make the POST request
-    const response = await fetch(
-      `${config.public.PUBLIC_CHECKOUT_URL}/api/shopping`,
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(payload),
-      }
-    );
+    const response = await fetch(`${config.public.CHECKOUT_URL}/api/shopping`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(payload),
+    });
 
     if (!response.ok) {
       const errorData = await response.json().catch(() => ({}));
